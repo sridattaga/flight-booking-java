@@ -4,105 +4,100 @@
  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
  https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
- <modelVersion>4.0.0</modelVersion>
+<modelVersion>4.0.0</modelVersion>
 
- <groupId>com.dxbair.services</groupId>
- <artifactId>flight-booking</artifactId>
- <version>0.0.1-SNAPSHOT</version>
- <packaging>jar</packaging>
+<groupId>com.dxbair.services</groupId>
+<artifactId>flight-booking</artifactId>
+<version>0.0.1-SNAPSHOT</version>
+<packaging>jar</packaging>
 
- <name>flight-booking</name>
- <description>Flight Booking Service for Dubai Air</description>
+<name>flight-booking</name>
+<description>Flight Booking Service for Dubai Air</description>
 
- <!-- Updated Spring Boot -->
- <parent>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-parent</artifactId>
-  <version>3.3.2</version>
-  <relativePath/>
- </parent>
+<!-- Spring Boot -->
+<parent>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-parent</artifactId>
+ <version>3.3.2</version>
+ <relativePath/>
+</parent>
 
- <!-- Java 25 -->
- <properties>
-  <java.version>25</java.version>
-  <maven.compiler.release>25</maven.compiler.release>
-  <maven.compiler.source>25</maven.compiler.source>
-  <maven.compiler.target>25</maven.compiler.target>
-  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
- </properties>
+<!-- Java 25 -->
+<properties>
+ <java.version>25</java.version>
+ <maven.compiler.release>25</maven.compiler.release>
+</properties>
 
- <dependencies>
+<dependencies>
 
-  <!-- Web -->
-  <dependency>
-   <groupId>org.springframework.boot</groupId>
-   <artifactId>spring-boot-starter-web</artifactId>
-  </dependency>
+<!-- Web -->
+<dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
 
-  <!-- JPA -->
-  <dependency>
-   <groupId>org.springframework.boot</groupId>
-   <artifactId>spring-boot-starter-data-jpa</artifactId>
-  </dependency>
+<!-- JPA -->
+<dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
 
-  <!-- H2 Database -->
-  <dependency>
-   <groupId>com.h2database</groupId>
-   <artifactId>h2</artifactId>
-   <scope>runtime</scope>
-  </dependency>
+<!-- Add javax compatibility -->
+<dependency>
+ <groupId>javax.persistence</groupId>
+ <artifactId>javax.persistence-api</artifactId>
+ <version>2.2</version>
+</dependency>
 
-  <!-- Swagger replacement -->
-  <dependency>
-   <groupId>org.springdoc</groupId>
-   <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-   <version>2.5.0</version>
-  </dependency>
+<!-- H2 -->
+<dependency>
+ <groupId>com.h2database</groupId>
+ <artifactId>h2</artifactId>
+ <scope>runtime</scope>
+</dependency>
 
-  <!-- Testing -->
-  <dependency>
-   <groupId>org.springframework.boot</groupId>
-   <artifactId>spring-boot-starter-test</artifactId>
-   <scope>test</scope>
-  </dependency>
+<!-- Swagger (Required for your SwaggerConfig.java) -->
+<dependency>
+ <groupId>io.springfox</groupId>
+ <artifactId>springfox-swagger2</artifactId>
+ <version>3.0.0</version>
+</dependency>
 
-  <dependency>
-   <groupId>com.jayway.jsonpath</groupId>
-   <artifactId>json-path</artifactId>
-   <scope>test</scope>
-  </dependency>
+<dependency>
+ <groupId>io.springfox</groupId>
+ <artifactId>springfox-swagger-ui</artifactId>
+ <version>3.0.0</version>
+</dependency>
 
- </dependencies>
+<!-- Testing -->
+<dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-test</artifactId>
+ <scope>test</scope>
+</dependency>
 
- <build>
-  <plugins>
+</dependencies>
 
-   <!-- Java 25 Compiler -->
-   <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.13.0</version>
-    <configuration>
-     <source>25</source>
-     <target>25</target>
-    </configuration>
-   </plugin>
+<build>
+<plugins>
 
-   <!-- Spring Boot Plugin -->
-   <plugin>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-maven-plugin</artifactId>
-   </plugin>
+<!-- Java 25 Compiler -->
+<plugin>
+ <groupId>org.apache.maven.plugins</groupId>
+ <artifactId>maven-compiler-plugin</artifactId>
+ <version>3.13.0</version>
+ <configuration>
+  <release>25</release>
+ </configuration>
+</plugin>
 
-   <!-- Test Plugin -->
-   <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-surefire-plugin</artifactId>
-    <version>3.2.5</version>
-   </plugin>
+<!-- Spring Boot -->
+<plugin>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-maven-plugin</artifactId>
+</plugin>
 
-  </plugins>
- </build>
+</plugins>
+</build>
 
 </project>
